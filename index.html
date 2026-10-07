@@ -1,100 +1,105 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script type="text/javascript">
-        if (window.location.protocol === 'http:') {
-            window.location.replace("https://rootercomp.unaux.com/");
-        }
-    </script>
-    <title>Rooter Comp</title>
-      <!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090a10">
+    <meta name="description" content="Rooter Comp. builds thoughtful mobile apps for everyday life and play.">
+    <title>Rooter Comp. — Small apps, made thoughtfully</title>
     <link rel="icon" href="/images/logo.png" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="bg-gray-900 text-gray-100">
-    <nav class="bg-gray-800 border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M9 3v18" />
-                            <path d="M15 3v18" />
-                            <path d="M3 9h18" />
-                            <path d="M3 15h18" />
-                        </svg>
-                        <span class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">Rooter Comp</span>
-                    </a>
+<body>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="/" aria-label="Rooter Comp. home">
+                <img class="brand-logo" src="/images/logo.png" alt="">
+                <span class="brand-copy">
+                    <span class="brand-name">Rooter Comp.</span>
+                    <span class="brand-caption">Independent app studio</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="#apps" aria-current="page">Our apps</a>
+                <a class="nav-cta" href="mailto:rootercomp@gmail.com">Get in touch ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container hero">
+            <span class="eyebrow">Made for the moments that matter</span>
+            <h1>Small apps.<br><span class="gradient-text">Thoughtfully made.</span></h1>
+            <p class="hero-lead">
+                Useful little tools and playful ideas, designed to feel simple from
+                the very first tap. Explore what we’re building.
+            </p>
+            <div class="hero-actions">
+                <a class="button button-primary" href="#apps">
+                    Explore our apps
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                </a>
+                <a class="button" href="mailto:rootercomp@gmail.com">Say hello</a>
+            </div>
+            <p class="hero-note">An independent studio by Rooter Comp.</p>
+        </section>
+
+        <section class="container section" id="apps">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">A little something for everyone</span>
+                    <h2>Explore our apps</h2>
                 </div>
-         
+                <p>Made with care, built to be easy to pick up and enjoyable to come back to.</p>
             </div>
-        </div>
-    </nav>
 
-    <main class="py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Uygulama 1 -->
-                <a href="app1.html" class="group">
-                    <div class="bg-gray-800 rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 border border-gray-700">
-                        <div class="relative">
-                            <img src="/images/tasbeeh-icon.png" alt="Tasbeeh Pro" class="w-full h-55 object-cover" loading="eager">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
-                        </div>
-                        <div class="p-6">
-                            <h2 class="text-xl font-semibold text-gray-100 mb-2 group-hover:text-purple-400 transition-colors duration-200">Tasbeeh Pro</h2>
-           
-                            <div class="flex items-center space-x-3">
-                                <span class="bg-purple-900 text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-purple-700">Free</span>
-                                <span class="text-yellow-400">5 ★</span>
-                            </div>
+            <div class="app-grid">
+                <a class="app-card" href="/app1.html">
+                    <div class="card-image">
+                        <img src="/images/tasbeeh-ss1.png" alt="Tasbeeh Pro app screen" loading="lazy">
+                        <img class="card-icon" src="/images/tasbeeh-icon.png" alt="" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-kicker">Mindful moments</span>
+                        <h3>Tasbeeh Pro</h3>
+                        <p>A calm, convenient way to keep track of your dhikr throughout the day.</p>
+                        <div class="card-bottom">
+                            <span>Discover the app <span aria-hidden="true">↗</span></span>
+                            <span>Android</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Uygulama 2 -->
-                <a href="app2.html" class="group">
-                    <div class="bg-gray-800 rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 border border-gray-700">
-                        <div class="relative">
-                            <img src="/images/tersten-icon.png" alt="Tersten Gel" class="w-full h-55 object-cover" loading="eager">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
-                        </div>
-                        <div class="p-6">
-                            <h2 class="text-xl font-semibold text-gray-100 mb-2 group-hover:text-purple-400 transition-colors duration-200">Tersten Gel</h2>
-                      
-                            <div class="flex items-center space-x-3">
-                                <span class="bg-purple-900 text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-purple-700">Free</span>
-                                <span class="text-yellow-400">5 ★</span>
-                            </div>
+                <a class="app-card" href="/app2.html">
+                    <div class="card-image">
+                        <img src="/images/tersten-ss1.png" alt="Tersten Gel app screen" loading="lazy">
+                        <img class="card-icon" src="/images/tersten-icon.png" alt="" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-kicker">A word game with a twist</span>
+                        <h3>Tersten Gel</h3>
+                        <p>Flip words, chase a high score, or challenge a friend to a quick duel.</p>
+                        <div class="card-bottom">
+                            <span>Discover the app <span aria-hidden="true">↗</span></span>
+                            <span>Android</span>
                         </div>
                     </div>
                 </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="bg-gray-800 border-t border-gray-700 py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                
-                <div class="flex space-x-6">
-                    <a href="mailto:rootercomp@gmail.com" class="text-gray-400 hover:text-purple-400 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <path d="M22 6l-10 7L2 6" />
-                        </svg>
-                    </a>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-wrap">
+            <span class="footer-brand">Rooter Comp. <span aria-hidden="true">·</span> Made with care.</span>
+            <div class="footer-links">
+                <a href="/privacy1.html">Tasbeeh Pro privacy</a>
+                <a href="/privacy2.html">Tersten Gel privacy</a>
+                <a href="mailto:rootercomp@gmail.com">Contact</a>
             </div>
-            <div class="mt-8 text-center text-gray-500 text-sm">
-                © 2025 Rooter Comp. All Rights Reserved.
-            </div>
+            <span>© 2026 Rooter Comp.</span>
         </div>
     </footer>
 </body>
