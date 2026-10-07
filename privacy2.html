@@ -2,129 +2,606 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#070a10">
     <meta name="description" content="Privacy Policy for Tersten Gel by Rooter Comp.">
-    <title>Privacy Policy - Tersten Gel</title>
+    <title>Privacy Policy · Tersten Gel</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #070a10;
+            --surface: #0d121c;
+            --surface-raised: #111927;
+            --border: #202a3a;
+            --text: #f2f5fa;
+            --muted: #a1adbf;
+            --faint: #6e7a8e;
+            --accent: #5eead4;
+            --accent-soft: rgba(94, 234, 212, .1);
+            --accent-border: rgba(94, 234, 212, .24);
+            --content-width: 1120px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+        body {
+            min-width: 320px;
+            margin: 0;
+            background:
+                radial-gradient(ellipse at 50% -18%, rgba(45, 212, 191, .12), transparent 42rem),
+                var(--bg);
+            color: var(--text);
+            font: 15px/1.75 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: #a4fff1; }
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        .topbar {
+            border-bottom: 1px solid rgba(142, 152, 171, .12);
+            background: rgba(7, 10, 16, .76);
+            backdrop-filter: blur(16px);
+        }
+        .topbar-inner, .page, .footer-inner {
+            width: min(var(--content-width), calc(100% - 48px));
+            margin-inline: auto;
+        }
+        .topbar-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            font-weight: 700;
+            letter-spacing: -.025em;
+        }
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--accent-border);
+            border-radius: 12px;
+            background: linear-gradient(145deg, rgba(94, 234, 212, .16), rgba(94, 234, 212, .035));
+            color: var(--accent);
+        }
+        .brand-mark svg { width: 21px; height: 21px; }
+        .brand-name { font-size: 15px; }
+        .brand-caption {
+            display: block;
+            color: var(--faint);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .08em;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+        .top-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 13px;
+            transition: color .2s ease;
+        }
+        .top-link:hover { color: var(--accent); }
+        .top-link svg { width: 16px; height: 16px; }
+
+        .page { padding-block: 76px 88px; }
+        .hero { max-width: 760px; margin-bottom: 42px; }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 18px;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+        .eyebrow::before {
+            width: 22px;
+            height: 1px;
+            background: var(--accent);
+            content: "";
+        }
+        h1 {
+            margin: 0;
+            font-size: clamp(38px, 6vw, 64px);
+            font-weight: 650;
+            letter-spacing: -.065em;
+            line-height: 1.05;
+        }
+        .hero-copy {
+            max-width: 620px;
+            margin: 20px 0 0;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 24px;
+            color: var(--faint);
+            font-size: 12px;
+        }
+        .hero-meta svg { width: 15px; height: 15px; color: var(--accent); }
+        .hero-meta .dot { color: #3b4658; }
+
+        .app-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 1px;
+            overflow: hidden;
+            margin-bottom: 34px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--border);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, .16);
+        }
+        .app-detail {
+            min-width: 0;
+            padding: 20px 23px;
+            background: linear-gradient(145deg, rgba(17, 25, 39, .98), rgba(13, 18, 28, .98));
+        }
+        .app-detail-label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--faint);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+        .app-detail-value {
+            display: block;
+            overflow-wrap: anywhere;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .app-detail:first-child .app-detail-value { color: var(--accent); }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            align-items: start;
+            gap: 24px;
+        }
+        .toc {
+            position: sticky;
+            top: 24px;
+            padding: 22px 18px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: rgba(13, 18, 28, .72);
+        }
+        .toc-title {
+            margin: 0 0 13px;
+            color: var(--faint);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+        .toc ol {
+            display: grid;
+            gap: 4px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .toc a {
+            display: block;
+            padding: 7px 9px;
+            border-radius: 7px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.45;
+            transition: background .2s ease, color .2s ease;
+        }
+        .toc a:hover {
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        .policy {
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: linear-gradient(155deg, rgba(17, 25, 39, .9), rgba(13, 18, 28, .96) 35rem);
+        }
+        .policy-section {
+            padding: 30px 36px 32px;
+            scroll-margin-top: 20px;
+        }
+        .policy-section + .policy-section { border-top: 1px solid var(--border); }
+        .section-heading {
+            display: flex;
+            align-items: baseline;
+            gap: 13px;
+            margin: 0 0 14px;
+            font-size: 18px;
+            font-weight: 650;
+            letter-spacing: -.025em;
+            line-height: 1.4;
+        }
+        .section-number {
+            color: var(--accent);
+            font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            letter-spacing: .04em;
+        }
+        .policy p {
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+        .policy p:last-child { margin-bottom: 0; }
+        .policy strong { color: #dce4ef; font-weight: 600; }
+        .policy ul {
+            display: grid;
+            gap: 11px;
+            margin: 14px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .policy li {
+            position: relative;
+            padding-left: 21px;
+            color: var(--muted);
+        }
+        .policy li::before {
+            position: absolute;
+            top: .73em;
+            left: 2px;
+            width: 6px;
+            height: 6px;
+            border-radius: 2px;
+            background: var(--accent);
+            content: "";
+            transform: rotate(45deg);
+        }
+        .service-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+        .service-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: rgba(7, 10, 16, .38);
+            font-size: 12px;
+            font-weight: 550;
+            transition: border-color .2s ease, background .2s ease;
+        }
+        .service-links a:hover {
+            border-color: var(--accent-border);
+            background: var(--accent-soft);
+        }
+        .service-links svg { width: 14px; height: 14px; }
+        .contact-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 24px 36px 32px;
+            padding: 20px 22px;
+            border: 1px solid var(--accent-border);
+            border-radius: 12px;
+            background: linear-gradient(110deg, rgba(94, 234, 212, .09), rgba(94, 234, 212, .025));
+        }
+        .contact-card p { margin: 0; }
+        .contact-title {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        .contact-email {
+            flex: 0 0 auto;
+            padding: 9px 13px;
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            background: rgba(7, 10, 16, .42);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid rgba(142, 152, 171, .12);
+            color: var(--faint);
+            font-size: 12px;
+        }
+        .footer-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .footer-brand { color: var(--muted); font-weight: 600; }
+
+        @media (max-width: 760px) {
+            .topbar-inner, .page, .footer-inner { width: min(100% - 36px, 600px); }
+            .page { padding-block: 54px 60px; }
+            .app-card { grid-template-columns: 1fr 1fr; }
+            .app-detail:first-child { grid-column: 1 / -1; }
+            .content-layout { grid-template-columns: 1fr; gap: 16px; }
+            .toc { position: static; padding: 16px; }
+            .toc ol { grid-template-columns: 1fr 1fr; column-gap: 8px; }
+            .policy-section { padding: 25px 24px 27px; }
+            .contact-card { margin: 20px 24px 26px; }
+        }
+        @media (max-width: 480px) {
+            .topbar-inner, .page, .footer-inner { width: calc(100% - 32px); }
+            .topbar-inner { min-height: 66px; }
+            .brand-mark { width: 35px; height: 35px; }
+            .top-link { gap: 5px; font-size: 12px; }
+            .page { padding-top: 42px; }
+            h1 { font-size: 42px; }
+            .hero-copy { font-size: 14px; }
+            .app-detail { padding: 16px; }
+            .app-detail-value { font-size: 12px; }
+            .toc ol { grid-template-columns: 1fr; }
+            .policy-section { padding: 22px 19px 24px; }
+            .section-heading { font-size: 16px; }
+            .policy { font-size: 14px; }
+            .contact-card {
+                align-items: flex-start;
+                flex-direction: column;
+                margin: 18px 19px 22px;
+                padding: 17px;
+            }
+            .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 18px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <article>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="#top" aria-label="Tersten Gel privacy policy home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 7h13a3 3 0 0 1 0 6H8"></path>
+                        <path d="m11 10-3 3 3 3"></path>
+                        <path d="M4 18h7"></path>
+                    </svg>
+                </span>
+                <span class="brand-name">Tersten Gel<span class="brand-caption">by Rooter Comp.</span></span>
+            </a>
+            <a class="top-link" href="mailto:rootercomp@gmail.com">
+                Contact
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="page" id="top">
+        <header class="hero">
+            <span class="eyebrow">Your privacy matters</span>
             <h1>Privacy Policy</h1>
-            <p><strong>App:</strong> Tersten Gel</p>
-            <p><strong>Android package name:</strong> com.rootercomp.reverse_word</p>
-            <p><strong>Developer:</strong> Rooter Comp.</p>
-
-            <p>
-                This Privacy Policy explains how Rooter Comp. ("we", "us", or "our"),
-                the developer of Tersten Gel (the "App"), handles information when
-                you use the App. The App includes local gameplay and, when Firebase
-                is configured, online matches and leaderboards.
+            <p class="hero-copy">
+                A clear overview of the information Tersten Gel handles, why it is
+                needed, and the choices available to you.
             </p>
+            <div class="hero-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                    <path d="M16 3v4M8 3v4M3 11h18"></path>
+                </svg>
+                Effective October 7, 2026
+                <span class="dot" aria-hidden="true">/</span>
+                Updated for Tersten Gel
+            </div>
+        </header>
 
-            <h2>Information handled by the App</h2>
-            <ul>
-                <li>
-                    <strong>Information stored on your device:</strong> Your
-                    display name, best local score, language preference, and audio
-                    preference may be stored locally so the App can remember your
-                    settings and local progress.
-                </li>
-                <li>
-                    <strong>Online account identifier and profile:</strong> For
-                    online features, Firebase Authentication creates an anonymous
-                    user identifier. The App may store that identifier, your
-                    display name, and your online game statistics, such as scores,
-                    wins, and losses.
-                </li>
-                <li>
-                    <strong>Online match information:</strong> If you use online
-                    matches, the App processes match or room codes, player display
-                    names, match settings, readiness and match status, scores, and
-                    gameplay progress. If you set an optional room password, it is
-                    included in the online room data. Do not reuse a password that
-                    you use for another service.
-                </li>
-            </ul>
+        <section class="app-card" aria-label="App and developer details">
+            <div class="app-detail">
+                <span class="app-detail-label">Application</span>
+                <span class="app-detail-value">Tersten Gel</span>
+            </div>
+            <div class="app-detail">
+                <span class="app-detail-label">Developer</span>
+                <span class="app-detail-value">Rooter Comp.</span>
+            </div>
+            <div class="app-detail">
+                <span class="app-detail-label">Android package</span>
+                <span class="app-detail-value">com.rootercomp.reverse_word</span>
+            </div>
+        </section>
 
-            <h2>How information is used</h2>
-            <p>
-                Information is used to save your preferences and progress, operate
-                online matches and leaderboards, and maintain the App's features.
-                We do not use information collected through the App for direct
-                marketing.
-            </p>
+        <div class="content-layout">
+            <nav class="toc" aria-label="On this page">
+                <p class="toc-title">On this page</p>
+                <ol>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#information">Information we handle</a></li>
+                    <li><a href="#use">How we use information</a></li>
+                    <li><a href="#providers">Storage &amp; providers</a></li>
+                    <li><a href="#retention">Retention &amp; deletion</a></li>
+                    <li><a href="#children">Children's privacy</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#changes">Policy changes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ol>
+            </nav>
 
-            <h2>Storage and service providers</h2>
-            <p>
-                Local preferences and progress are stored on your device. Online
-                account, match, and leaderboard information is processed using
-                Google Firebase services, including Firebase Authentication,
-                Cloud Firestore, and Firebase Realtime Database. Google may also
-                process technical and network information, such as IP address and
-                device or app information, when providing these services, in
-                accordance with Google's policies.
-            </p>
-            <p>
-                The App does not request device location. The current App code
-                does not include advertising or analytics SDKs.
-            </p>
-            <ul>
-                <li>
-                    <a href="https://firebase.google.com/support/privacy"
-                       target="_blank" rel="noopener noreferrer">
-                        Firebase privacy and security
-                    </a>
-                </li>
-                <li>
-                    <a href="https://policies.google.com/privacy"
-                       target="_blank" rel="noopener noreferrer">
-                        Google Privacy Policy
-                    </a>
-                </li>
-            </ul>
+            <article class="policy">
+                <section class="policy-section" id="overview">
+                    <h2 class="section-heading"><span class="section-number">01</span> Overview</h2>
+                    <p>
+                        This Privacy Policy explains how <strong>Rooter Comp.</strong>
+                        ("we", "us", or "our"), the developer of <strong>Tersten Gel</strong>
+                        (the "App"), handles information when you use the App. The App
+                        includes local gameplay and, when Firebase is configured, online
+                        matches and leaderboards.
+                    </p>
+                </section>
 
-            <h2>Retention and deletion</h2>
-            <p>
-                Information stored locally remains on your device until you
-                remove it or uninstall the App. Online information is retained
-                while needed to provide online features. To request deletion of
-                information associated with your online account, contact us at
-                <a href="mailto:rootercomp@gmail.com">rootercomp@gmail.com</a>
-                and include "Tersten Gel data deletion request" in your message.
-                We will take reasonable steps to locate and delete the associated
-                information, subject to applicable legal obligations.
-            </p>
+                <section class="policy-section" id="information">
+                    <h2 class="section-heading"><span class="section-number">02</span> Information we handle</h2>
+                    <ul>
+                        <li>
+                            <strong>Stored on your device:</strong> Your display name,
+                            best local score, language preference, and audio preference
+                            may be stored locally so the App can remember your settings
+                            and local progress.
+                        </li>
+                        <li>
+                            <strong>Online account and profile:</strong> For online
+                            features, Firebase Authentication creates an anonymous user
+                            identifier. The App may store that identifier, your display
+                            name, and online game statistics such as scores, wins, and
+                            losses.
+                        </li>
+                        <li>
+                            <strong>Online match information:</strong> If you use online
+                            matches, the App processes match or room codes, player display
+                            names, match settings, readiness and match status, scores,
+                            and gameplay progress. If you set an optional room password,
+                            it is included in the online room data. Do not reuse a
+                            password that you use for another service.
+                        </li>
+                    </ul>
+                </section>
 
-            <h2>Children's privacy</h2>
-            <p>
-                The App is not directed to children under 13, and we do not
-                knowingly collect personal information from children under 13.
-                If you believe a child has provided personal information through
-                the App, contact us so we can review and address the request.
-            </p>
+                <section class="policy-section" id="use">
+                    <h2 class="section-heading"><span class="section-number">03</span> How we use information</h2>
+                    <p>
+                        Information is used to save your preferences and progress,
+                        operate online matches and leaderboards, and maintain the App's
+                        features. We do not use information collected through the App
+                        for direct marketing.
+                    </p>
+                </section>
 
-            <h2>Security</h2>
-            <p>
-                We take reasonable measures to protect information handled by the
-                App. No method of electronic storage or transmission is completely
-                secure.
-            </p>
+                <section class="policy-section" id="providers">
+                    <h2 class="section-heading"><span class="section-number">04</span> Storage and service providers</h2>
+                    <p>
+                        Local preferences and progress are stored on your device.
+                        Online account, match, and leaderboard information is processed
+                        using Google Firebase services, including Firebase
+                        Authentication, Cloud Firestore, and Firebase Realtime Database.
+                        Google may also process technical and network information, such
+                        as IP address and device or app information, when providing
+                        these services, in accordance with Google's policies.
+                    </p>
+                    <p>
+                        The App does not request device location. The current App code
+                        does not include advertising or analytics SDKs.
+                    </p>
+                    <div class="service-links">
+                        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">
+                            Firebase privacy
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M7 17 17 7M7 7h10v10"></path>
+                            </svg>
+                        </a>
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+                            Google Privacy Policy
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M7 17 17 7M7 7h10v10"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
 
-            <h2>Changes to this policy</h2>
-            <p>
-                We may update this Privacy Policy when the App or its data
-                practices change. The revised policy will be posted on this page
-                with an updated effective date.
-            </p>
-            <p><strong>Effective date:</strong> October 7, 2026</p>
+                <section class="policy-section" id="retention">
+                    <h2 class="section-heading"><span class="section-number">05</span> Retention and deletion</h2>
+                    <p>
+                        Information stored locally remains on your device until you
+                        remove it or uninstall the App. Online information is retained
+                        while needed to provide online features. To request deletion of
+                        information associated with your online account, contact us at
+                        <a href="mailto:rootercomp@gmail.com">rootercomp@gmail.com</a>
+                        and include "Tersten Gel data deletion request" in your message.
+                        We will take reasonable steps to locate and delete the associated
+                        information, subject to applicable legal obligations.
+                    </p>
+                </section>
 
-            <h2>Contact</h2>
-            <p>
-                For privacy questions or requests, contact the developer:
-                <strong>Rooter Comp.</strong> at
-                <a href="mailto:rootercomp@gmail.com">rootercomp@gmail.com</a>.
-            </p>
-        </article>
+                <section class="policy-section" id="children">
+                    <h2 class="section-heading"><span class="section-number">06</span> Children's privacy</h2>
+                    <p>
+                        The App is not directed to children under 13, and we do not
+                        knowingly collect personal information from children under 13.
+                        If you believe a child has provided personal information
+                        through the App, contact us so we can review and address the
+                        request.
+                    </p>
+                </section>
+
+                <section class="policy-section" id="security">
+                    <h2 class="section-heading"><span class="section-number">07</span> Security</h2>
+                    <p>
+                        We take reasonable measures to protect information handled by
+                        the App. No method of electronic storage or transmission is
+                        completely secure.
+                    </p>
+                </section>
+
+                <section class="policy-section" id="changes">
+                    <h2 class="section-heading"><span class="section-number">08</span> Changes to this policy</h2>
+                    <p>
+                        We may update this Privacy Policy when the App or its data
+                        practices change. The revised policy will be posted on this
+                        page with an updated effective date.
+                    </p>
+                </section>
+
+                <section class="policy-section" id="contact">
+                    <h2 class="section-heading"><span class="section-number">09</span> Contact</h2>
+                    <p>
+                        For privacy questions or requests, contact the developer,
+                        <strong>Rooter Comp.</strong>
+                    </p>
+                </section>
+
+                <aside class="contact-card" aria-label="Contact the developer">
+                    <p>
+                        <span class="contact-title">Need help with a privacy request?</span>
+                        <span>We’re here to help with questions about your data.</span>
+                    </p>
+                    <a class="contact-email" href="mailto:rootercomp@gmail.com">Email Rooter Comp.</a>
+                </aside>
+            </article>
+        </div>
     </main>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-brand">Tersten Gel <span aria-hidden="true">·</span> Rooter Comp.</span>
+            <span>Privacy Policy · Effective October 7, 2026</span>
+        </div>
+    </footer>
 </body>
 </html>
